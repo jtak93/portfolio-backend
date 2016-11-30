@@ -1,5 +1,4 @@
 var mongoose = require('mongoose');
-var contactSchema = mongoose.model('Contact').schema
 
 var Schema = mongoose.Schema
 
@@ -10,3 +9,7 @@ var contactSchema = new Schema({
   company: String,
   phone: String,
 });
+
+var Contact = mongoose.model('Contact', contactSchema);
+
+module.exports = Contact;

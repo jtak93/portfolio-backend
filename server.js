@@ -9,7 +9,7 @@ var cors = require('cors');
 var db = require('./config/db')
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
+var contacts = require('./routes/api/contacts');
 
 var app = express();
 
@@ -27,7 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 
 app.use('/', routes);
-app.use('/users', users);
+app.use('/api/contacts', contacts);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
